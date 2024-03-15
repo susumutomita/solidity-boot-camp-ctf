@@ -1,6 +1,12 @@
 [profile.default]
-src = "src"
+bytecode_hash = "none"
+fuzz = { runs = 1_000 }
+gas_reports = ["*"]
+optimizer = true
+optimizer_runs = 16
 out = "out"
-libs = ["lib"]
-
-# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+script = "script"
+solc = "0.8.24"
+src = "src"
+test = "test"
+# See more config options https://github.com/foundry-rs/foundry/tree/master/config
