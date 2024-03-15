@@ -12,6 +12,7 @@ contract MatrixAdditionTest is Test {
     }
 
     function testMatrixAddition() public {
+        // 2行3列の行列を正しく初期化
         uint256[2][3] memory x = [[1, 2, 3], [4, 5, 6]];
         uint256[2][3] memory y = [[10, 20, 30], [40, 50, 60]];
         uint256[2][3] memory expected = [[11, 22, 33], [44, 55, 66]];

@@ -15,8 +15,8 @@ contract MatrixAddition is Isolution1 {
     ) external pure override returns (uint256[2][3] memory) {
         uint256[2][3] memory result;
 
-        for (uint256 i = 0; i < 2; i++) {
-            for (uint256 j = 0; j < 3; j++) {
+        for(uint i = 0; i < 2; i++) {
+            for(uint j = 0; j < 3; j++) {
                 result[i][j] = x[i][j] + y[i][j];
             }
         }
