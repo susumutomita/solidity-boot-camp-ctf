@@ -2,16 +2,16 @@
 pragma solidity ^0.8.24;
 
 import "forge-std/Test.sol";
-import "../src/MatrixAddition.sol"; // MatrixAdditionコントラクトへのパスを適切に設定してください
+import "../src/Level1Template.sol"; // MatrixAdditionコントラクトへのパスを適切に設定してください
 
 contract MatrixAdditionTest is Test {
-    MatrixAddition matrixAddition;
+    Level1Template matrixAddition;
 
     function setUp() public {
-        matrixAddition = new MatrixAddition();
+        matrixAddition = new Level1Template();
     }
 
-    function testMatrixAddition() public {
+    function testLevel1Template() public {
         // 2行3列の行列を正しく初期化
         uint256[2][3] memory x = [[1, 2, 3], [4, 5, 6]];
         uint256[2][3] memory y = [[10, 20, 30], [40, 50, 60]];
