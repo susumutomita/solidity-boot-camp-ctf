@@ -11,7 +11,7 @@ contract MatrixAdditionTest is Test {
         matrixAddition = new MatrixAdditionWithLoop();
     }
 
-    function testMatrixAdditionLoop() public {
+    function testMatrixAdditionLoop() public view {
         uint256[2][2] memory x = [
             [uint256(1), uint256(2)],
             [uint256(3), uint256(4)]
@@ -21,7 +21,6 @@ contract MatrixAdditionTest is Test {
             [uint256(7), uint256(8)]
         ];
 
-        // 行列加算の結果を検証
         uint256[2][2] memory result = matrixAddition.sloop(x, y);
 
         assertEq(

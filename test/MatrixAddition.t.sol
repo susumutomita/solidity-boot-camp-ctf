@@ -11,7 +11,7 @@ contract MatrixAdditionTest is Test {
         matrixAddition = new MatrixAddition();
     }
 
-    function testMatrixAddition() public {
+    function testMatrixAddition() public view {
         uint256[2][2] memory x = [
             [uint256(1), uint256(2)],
             [uint256(3), uint256(4)]
