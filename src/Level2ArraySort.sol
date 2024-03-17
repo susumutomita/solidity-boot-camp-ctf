@@ -6,7 +6,7 @@ pragma solidity ^0.8.24;
     function solution(uint256[10] calldata unsortedArray) external returns (uint256[10] memory sortedArray);
   }
 */
-contract Level2Template {
+contract Level2ArraySort {
     function solution(
         uint256[10] calldata unsortedArray
     ) external pure returns (uint256[10] memory) {
