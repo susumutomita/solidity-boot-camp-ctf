@@ -26,7 +26,12 @@ jobs:
         with:
           version: nightly
 
+      - name: Run Forge format
+        run: |
+          make format_check
+        id: format_check
+
       - name: Run Forge tests
         run: |
-          forge test --gas-report -vvv
+          make test
         id: test

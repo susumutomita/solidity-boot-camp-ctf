@@ -2,6 +2,10 @@
 format:
 	forge fmt
 
+.PHONY: format_check
+format_check:
+	forge fmt --check
+
 .PHONY: test
 test:
 	forge test --gas-report
