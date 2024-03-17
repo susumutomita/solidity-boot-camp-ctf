@@ -6,35 +6,23 @@ pragma solidity ^0.8.24;
     function solution(uint256[10] calldata unsortedArray) external returns (uint256[10] memory sortedArray);
   }
 */
-
 contract Level2ArraySort {
     function solution(
         uint256[10] calldata unsortedArray
     ) external pure returns (uint256[10] memory) {
-        uint256[10] memory arr = unsortedArray;
-        quickSort(arr, 0, int(arr.length - 1));
-        return arr;
-    }
-
-    function quickSort(
-        uint256[10] memory arr,
-        int left,
-        int right
-    ) internal pure {
-        int i = left;
-        int j = right;
-        if (i >= j) return;
-        uint pivot = arr[uint(left + (right - left) / 2)];
-        while (i <= j) {
-            while (arr[uint(i)] < pivot) i++;
-            while (pivot < arr[uint(j)]) j--;
-            if (i <= j) {
-                (arr[uint(i)], arr[uint(j)]) = (arr[uint(j)], arr[uint(i)]);
-                i++;
-                j--;
+        unchecked {
+            uint length = 10;
+            uint256[10] memory sorted = unsortedArray;
+            for (uint i = 1; i < length; i++) {
+                uint key = sorted[i];
+                int j = int(i) - 1;
+                while ((int(j) >= 0) && (sorted[uint(j)] > key)) {
+                    sorted[uint(j + 1)] = sorted[uint(j)];
+                    j--;
+                }
+                sorted[uint(j + 1)] = key;
             }
+            return sorted;
         }
-        if (left < j) quickSort(arr, left, j);
-        if (i < right) quickSort(arr, i, right);
     }
 }
