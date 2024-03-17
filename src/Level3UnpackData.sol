@@ -11,45 +11,11 @@ contract Level3UnpackData {
     function solution(
         bytes memory packed
     ) external pure returns (uint16 a, bool b, bytes6 c) {
-        a = toUint16(packed, 0);
-        b = toBool(packed, 2);
-        c = toBytes6(packed, 3);
-
-        return (a, b, c);
-    }
-
-    function toUint16(
-        bytes memory data,
-        uint offset
-    ) internal pure returns (uint16) {
-        uint16 tempUint;
-
         assembly {
-            tempUint := mload(add(add(data, 0x2), offset))
+            a := and(mload(add(packed, 0x2)), 0xFFFF)
+            b := gt(and(mload(add(packed, 0x3)), 0xFF), 0)
+            c := mload(add(add(packed, 0x20), 3))
         }
-
-        return tempUint;
-    }
-
-    function toBool(
-        bytes memory data,
-        uint offset
-    ) internal pure returns (bool) {
-        uint8 tempBoolByte;
-        assembly {
-            tempBoolByte := mload(add(add(data, 0x1), offset))
-        }
-        return tempBoolByte != 0;
-    }
-
-    function toBytes6(
-        bytes memory data,
-        uint offset
-    ) internal pure returns (bytes6 result) {
-        assembly {
-            result := mload(add(add(data, 0x20), offset))
-        }
-        result = bytes6(result);
-        return result;
+        return (a, bool(b), bytes6(c));
     }
 }
