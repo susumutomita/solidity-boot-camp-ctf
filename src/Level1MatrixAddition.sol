@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.24;
 
-interface Isolution {
-    function solution(
-        uint256[2][3] calldata x,
-        uint256[2][3] calldata y
-    ) external pure returns (uint256[2][3] memory);
-}
+// interface Isolution {
+//     function solution(
+//         uint256[2][3] calldata x,
+//         uint256[2][3] calldata y
+//     ) external pure returns (uint256[2][3] memory);
+// }
 
 contract Level1MatrixAddition {
     function solution(
