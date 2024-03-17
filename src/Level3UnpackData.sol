@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.24;
 
-/*
-interface Isolution3 {
-    function solution(bytes memory packed) external returns (uint16 a, bool b, bytes6 c);
-}
-*/
+// interface Isolution3 {
+//     function solution(
+//         bytes memory packed
+//     ) external returns (uint16 a, bool b, bytes6 c);
+// }
 
 contract Level3UnpackData {
     function solution(
