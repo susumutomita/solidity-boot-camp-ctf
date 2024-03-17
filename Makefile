@@ -1,3 +1,7 @@
+.PHONY: format
+format:
+	forge fmt
+
 .PHONY: test
 test:
 	forge test --gas-report
@@ -46,4 +50,4 @@ open_storage_Level3UnpackData:
 examine_storage: examine_storage_Level1MatrixAddition examine_storage_Level2ArraySort examine_storage_Level3UnpackData
 
 .PHONY: before_commit
-before_commit: test examine_storage examine_class
+before_commit: format test examine_storage examine_class

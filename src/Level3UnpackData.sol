@@ -8,9 +8,7 @@ pragma solidity ^0.8.24;
 // }
 
 contract Level3UnpackData {
-    function solution(
-        bytes memory packed
-    ) external pure returns (uint16 a, bool b, bytes6 c) {
+    function solution(bytes memory packed) external pure returns (uint16 a, bool b, bytes6 c) {
         assembly {
             a := and(mload(add(packed, 0x2)), 0xFFFF)
             b := gt(and(mload(add(packed, 0x3)), 0xFF), 0)

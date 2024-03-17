@@ -8,19 +8,17 @@ pragma solidity ^0.8.24;
 // }
 
 contract Level2ArraySort {
-    function solution(
-        uint256[10] calldata unsortedArray
-    ) external pure returns (uint256[10] memory) {
+    function solution(uint256[10] calldata unsortedArray) external pure returns (uint256[10] memory) {
         unchecked {
             uint256[10] memory sorted = unsortedArray;
-            for (uint i = 1; i < 10; i++) {
-                uint key = sorted[i];
-                int j = int(i) - 1;
-                while ((int(j) >= 0) && (sorted[uint(j)] > key)) {
-                    sorted[uint(j + 1)] = sorted[uint(j)];
+            for (uint256 i = 1; i < 10; i++) {
+                uint256 key = sorted[i];
+                int256 j = int256(i) - 1;
+                while ((int256(j) >= 0) && (sorted[uint256(j)] > key)) {
+                    sorted[uint256(j + 1)] = sorted[uint256(j)];
                     j--;
                 }
-                sorted[uint(j + 1)] = key;
+                sorted[uint256(j + 1)] = key;
             }
             return sorted;
         }
