@@ -11,9 +11,8 @@ contract Level2ArraySort {
         uint256[10] calldata unsortedArray
     ) external pure returns (uint256[10] memory) {
         unchecked {
-            uint length = 10;
             uint256[10] memory sorted = unsortedArray;
-            for (uint i = 1; i < length; i++) {
+            for (uint i = 1; i < 10; i++) {
                 uint key = sorted[i];
                 int j = int(i) - 1;
                 while ((int(j) >= 0) && (sorted[uint(j)] > key)) {
