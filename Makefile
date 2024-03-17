@@ -42,5 +42,8 @@ open_storage_Level2ArraySort:
 open_storage_Level3UnpackData:
 	open -a Google\ Chrome ./Level3UnpackData.svg
 
+.PHONY: examine_storage
+examine_storage: examine_storage_Level1MatrixAddition examine_storage_Level2ArraySort examine_storage_Level3UnpackData
+
 .PHONY: before_commit
 before_commit: test examine_storage examine_class
