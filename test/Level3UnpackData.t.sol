@@ -15,7 +15,7 @@ contract UnpackDataSolutionTest is Test {
         uint16 expectedA = 12345;
         bool expectedB = true;
         bytes6 expectedC = "abc123";
-        bytes memory packedData = abi.encode(
+        bytes memory packedData = abi.encodePacked(
             expectedA,
             expectedB,
             expectedC
