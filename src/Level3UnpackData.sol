@@ -14,6 +14,6 @@ contract Level3UnpackData {
             b := gt(and(mload(add(packed, 0x3)), 0xFF), 0)
             c := mload(add(add(packed, 0x20), 3))
         }
-        return (a, bool(b), bytes6(c));
+        return (a, b, c);
     }
 }
