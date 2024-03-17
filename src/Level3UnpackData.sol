@@ -11,7 +11,6 @@ contract Level3UnpackData {
     function solution(
         bytes memory packed
     ) external pure returns (uint16 a, bool b, bytes6 c) {
-        require(packed.length >= 9, "Invalid data length");
         a = toUint16(packed, 0);
         b = toBool(packed, 2);
         c = toBytes6(packed, 3);
@@ -23,7 +22,6 @@ contract Level3UnpackData {
         bytes memory data,
         uint offset
     ) internal pure returns (uint16) {
-        require(data.length >= offset + 2, "Out of bounds");
         uint16 tempUint;
 
         assembly {
@@ -37,24 +35,21 @@ contract Level3UnpackData {
         bytes memory data,
         uint offset
     ) internal pure returns (bool) {
-        require(data.length >= offset + 1, "Out of bounds");
-        bool tempBool;
-
+        uint8 tempBoolByte;
         assembly {
-            tempBool := mload(add(add(data, 0x1), offset))
+            tempBoolByte := mload(add(add(data, 0x1), offset))
         }
-
-        return tempBool;
+        return tempBoolByte != 0;
     }
 
     function toBytes6(
         bytes memory data,
         uint offset
     ) internal pure returns (bytes6 result) {
-        require(data.length >= offset + 6, "Out of bounds");
         assembly {
             result := mload(add(add(data, 0x20), offset))
         }
         result = bytes6(result);
+        return result;
     }
 }
