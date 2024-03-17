@@ -13,8 +13,6 @@ contract Level1Template is Isolution {
         uint256[2][3] calldata x,
         uint256[2][3] calldata y
     ) external pure returns (uint256[2][3] memory finalArray) {
-        uint256[2][3] memory finalArray;
-
         finalArray[0][0] = x[0][0] + y[0][0];
         finalArray[0][1] = x[0][1] + y[0][1];
         finalArray[1][0] = x[1][0] + y[1][0];

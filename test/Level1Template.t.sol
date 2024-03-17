@@ -11,7 +11,7 @@ contract MatrixAdditionTest is Test {
         matrixAddition = new Level1Template();
     }
 
-    function testLevel1Template() public {
+    function testLevel1Template() public view {
         uint256[2][3] memory x = [
             [uint256(1), uint256(2)],
             [uint256(3), uint256(4)],
