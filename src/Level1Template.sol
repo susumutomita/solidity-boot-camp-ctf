@@ -8,7 +8,7 @@ interface Isolution {
     ) external pure returns (uint256[2][3] memory);
 }
 
-contract Level1Template is Isolution {
+contract Level1Template {
     function solution(
         uint256[2][3] calldata x,
         uint256[2][3] calldata y
