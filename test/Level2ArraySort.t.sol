@@ -11,38 +11,38 @@ contract ArraySortTest is Test {
         sortArray = new Level2ArraySort();
     }
 
-    // function testLevel2ArraySort() public view {
-    //     uint256[10] memory unsortedArray = [
-    //         uint256(7),
-    //         uint256(3),
-    //         uint256(9),
-    //         uint256(1),
-    //         uint256(5),
-    //         uint256(8),
-    //         uint256(4),
-    //         uint256(2),
-    //         uint256(6),
-    //         uint256(0)
-    //     ];
-    //     uint256[10] memory expectedSortedArray = [
-    //         uint256(0),
-    //         uint256(1),
-    //         uint256(2),
-    //         uint256(3),
-    //         uint256(4),
-    //         uint256(5),
-    //         uint256(6),
-    //         uint256(7),
-    //         uint256(8),
-    //         uint256(9)
-    //     ];
+    function testLevel2ArraySort() public view {
+        uint256[10] memory unsortedArray = [
+            uint256(7),
+            uint256(3),
+            uint256(9),
+            uint256(1),
+            uint256(5),
+            uint256(8),
+            uint256(4),
+            uint256(2),
+            uint256(6),
+            uint256(0)
+        ];
+        uint256[10] memory expectedSortedArray = [
+            uint256(0),
+            uint256(1),
+            uint256(2),
+            uint256(3),
+            uint256(4),
+            uint256(5),
+            uint256(6),
+            uint256(7),
+            uint256(8),
+            uint256(9)
+        ];
 
-    //     uint256[10] memory sortedArray = sortArray.solution(unsortedArray);
+        uint256[10] memory sortedArray = sortArray.solution(unsortedArray);
 
-    //     for (uint256 i = 0; i < sortedArray.length; i++) {
-    //         assertEq(sortedArray[i], expectedSortedArray[i]);
-    //     }
-    // }
+        for (uint256 i = 0; i < sortedArray.length; i++) {
+            assertEq(sortedArray[i], expectedSortedArray[i]);
+        }
+    }
 
     function testLevel2ArraySortNonZero() public view {
         uint256[10] memory unsortedArray = [
