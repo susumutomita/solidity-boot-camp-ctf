@@ -14,6 +14,10 @@ test_debug:
 examine_storage_Level1Template:
 	sol2uml storage -c Level1Template src
 
+.PHONY: examine_storage_Level2Template
+examine_storage_Level2Template:
+	sol2uml storage -c Level2Template src
+
 .PHONY: examine_class
 examine_class:
 	sol2uml src
@@ -25,6 +29,10 @@ open_class:
 .PHONY: open_storage_Level1Template
 open_storage_Level1Template:
 	open -a Google\ Chrome ./Level1Template.svg
+
+.PHONY: open_storage_Level2Template
+open_storage_Level2Template:
+	open -a Google\ Chrome ./Level2Template.svg
 
 .PHONY: before_commit
 before_commit: test examine_storage examine_class
