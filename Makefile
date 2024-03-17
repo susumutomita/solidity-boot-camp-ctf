@@ -10,9 +10,9 @@ test_watch:
 test_debug:
 	forge test --gas-report -vvvvv --watch
 
-.PHONY: examine_storage
-examine_storage:
-	sol2uml storage -c GasContract src
+.PHONY: examine_storage_Level1Template
+examine_storage_Level1Template:
+	sol2uml storage -c Level1Template src
 
 .PHONY: examine_class
 examine_class:
@@ -22,9 +22,9 @@ examine_class:
 open_class:
 	open -a Google\ Chrome ./classDiagram.svg
 
-.PHONY: open_storage
-open_storage:
-	open -a Google\ Chrome ./GasContract.svg
+.PHONY: open_storage_Level1Template
+open_storage_Level1Template:
+	open -a Google\ Chrome ./Level1Template.svg
 
 .PHONY: before_commit
 before_commit: test examine_storage examine_class
