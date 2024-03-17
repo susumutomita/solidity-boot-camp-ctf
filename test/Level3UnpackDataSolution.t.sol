@@ -5,10 +5,10 @@ import "forge-std/Test.sol";
 import "../src/Level3UnpackDataSolution.sol"; // MatrixAdditionコントラクトへのパスを適切に設定してください
 
 contract UnpackDataSolutionTest is Test {
-    Level3UnpackDataSolution solution;
+    Level3UnpackDataSolution unpackDataSolution;
 
     function setUp() public {
-        solution = new Level3UnpackDataSolution();
+        unpackDataSolution = new Level3UnpackDataSolution();
     }
 
     function testSolution() public view {
@@ -20,7 +20,7 @@ contract UnpackDataSolutionTest is Test {
             expectedB,
             expectedC
         );
-        (uint16 a, bool b, bytes6 c) = solution.solution(packedData);
+        (uint16 a, bool b, bytes6 c) = unpackDataSolution.solution(packedData);
         assertEq(a, expectedA);
         assertEq(b, expectedB);
         assertEq(c, expectedC);
