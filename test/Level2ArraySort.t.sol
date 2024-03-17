@@ -2,7 +2,7 @@
 pragma solidity ^0.8.24;
 
 import "forge-std/Test.sol";
-import "../src/Level2ArraySort.sol"; // MatrixAdditionコントラクトへのパスを適切に設定してください
+import "../src/Level2ArraySort.sol";
 
 contract ArraySortTest is Test {
     Level2ArraySort sortArray;
