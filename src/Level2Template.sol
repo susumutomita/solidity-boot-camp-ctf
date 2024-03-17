@@ -9,7 +9,7 @@ pragma solidity ^0.8.24;
 contract Level2Template {
     function solution(
         uint256[10] calldata unsortedArray
-    ) external pure returns (uint256[10] memory sortedArray) {
+    ) external pure returns (uint256[10] memory) {
         uint256[10] memory sortedArray = unsortedArray;
         bool swapped;
         do {
