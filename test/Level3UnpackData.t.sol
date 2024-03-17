@@ -11,7 +11,7 @@ contract UnpackDataSolutionTest is Test {
         unpackData = new Level3UnpackData();
     }
 
-    function testLevel3UnpackData() public {
+    function testLevel3UnpackData() public view {
         uint16 expectedA = 12345;
         bool expectedB = true;
         bytes6 expectedC = "abc123";
