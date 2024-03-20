@@ -1,11 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.24;
 
-
 // interface Isolution4 {
 //     function solution(uint256 number) external pure returns (uint256);
 // }
-
 
 contract Level4PowersOf2 {
     // stdin: 1                     stdout: 1 or 2**0
