@@ -11,6 +11,10 @@ contract Level4PowersOf2Test is Test {
         level4PowersOf2 = new Level4PowersOf2();
     }
 
+    function testSolutionWith0() public {
+        assertEq(level4PowersOf2.solution(0), 1);
+    }
+
     function testSolutionWith1() public {
         assertEq(level4PowersOf2.solution(1), 1);
     }
