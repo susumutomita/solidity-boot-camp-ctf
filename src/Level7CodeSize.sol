@@ -6,7 +6,9 @@ pragma solidity ^0.8.24;
 // }
 
 contract Level7CodeSize {
-    function solution(address addr) external pure returns (uint256 codeSize) {
-        // TODO: Write your solution here
+    function solution(address addr) external view returns (uint256 codeSize) {
+        assembly {
+            codeSize := extcodesize(addr)
+        }
     }
 }
