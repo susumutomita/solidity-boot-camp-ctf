@@ -47,6 +47,11 @@ deploy_Level5Average:
 	forge script script/Level5Average.s.sol:Level5AverageScript --fork-url $(FORK_URL) \
 	--private-key $(PRIVATE_KEY) --broadcast
 
+.PHONY: deploy_Level6VerifyingSignatures
+deploy_Level6VerifyingSignatures:
+	forge script script/Level6VerifyingSignatures.s.sol:Level6VerifyingSignaturesScript --fork-url $(FORK_URL) \
+	--private-key $(PRIVATE_KEY) --broadcast
+
 .PHONY: examine_storage_Level1MatrixAddition
 examine_storage_Level1MatrixAddition:
 	sol2uml storage -c Level1MatrixAddition src
@@ -66,6 +71,10 @@ examine_storage_Level4PowersOf2:
 .PHONY: examine_storage_Level5Average
 examine_storage_Level5Average:
 	sol2uml storage -c Level5Average src
+
+.PHONY: examine_storage_Level6VerifyingSignatures
+examine_storage_Level6VerifyingSignatures:
+	sol2uml storage -c Level6VerifyingSignatures src
 
 .PHONY: examine_class
 examine_class:
@@ -95,8 +104,12 @@ open_storage_Level4PowersOf2:
 open_storage_Level5Average:
 	open -a Google\ Chrome ./Level5Average.svg
 
+.PHONY: open_storage_Level6VerifyingSignatures
+open_storage_Level6VerifyingSignatures:
+	open -a Google\ Chrome ./Level6VerifyingSignatures.svg
+
 .PHONY: examine_storage
-examine_storage: examine_storage_Level1MatrixAddition examine_storage_Level2ArraySort examine_storage_Level3UnpackData examine_storage_Level4PowersOf2 examine_storage_Level5Average
+examine_storage: examine_storage_Level1MatrixAddition examine_storage_Level2ArraySort examine_storage_Level3UnpackData examine_storage_Level4PowersOf2 examine_storage_Level5Average examine_storage_Level6VerifyingSignatures
 
 .PHONY: before_commit
 before_commit: format test examine_storage examine_class
