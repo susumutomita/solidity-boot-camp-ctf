@@ -12,17 +12,17 @@ contract Level7CodeSizeTest is Test {
     }
 
     function testCodeSizeOfContract() public view {
-        // このテストでは、デプロイ済みのコントラクトのアドレスを使用する
-        // 例として、level7CodeSizeコントラクト自体のコードサイズをチェックします
         uint256 codeSize = level7CodeSize.solution(address(level7CodeSize));
-        // コードサイズが0より大きいことを確認します（具体的なサイズは環境により異なるため）
-        assertTrue(codeSize > 0, "The code size should be greater than 0 for a contract.");
+        assertTrue(
+            codeSize > 0,
+            "The code size should be greater than 0 for a contract."
+        );
     }
 
     function testCodeSizeOfEOA() public view {
-        // EOAのアドレスを使用する（このテストのためにランダムなアドレスを使用します）
-        address eoaAddress = address(0x1234567890123456789012345678901234567890);
-        // EOAのコードサイズが0であることを確認します
+        address eoaAddress = address(
+            0x1234567890123456789012345678901234567890
+        );
         uint256 codeSize = level7CodeSize.solution(eoaAddress);
         assertEq(codeSize, 0, "The code size should be 0 for an EOA.");
     }
