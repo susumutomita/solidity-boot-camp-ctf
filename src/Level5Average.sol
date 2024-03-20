@@ -25,7 +25,7 @@ contract Level5Average {
             // 切り上げるためには、合計が奇数の場合は1を足す
             bool needCeil = (sum % 2 != 0);
             // needCeilの結果に基づいて1または0をint256型にキャスト
-            return (sum / 2) + (needCeil ? int256(1) : int256(0));
+            return int256((sum / 2) + (needCeil ? int256(1) : int256(0)));
         }
     }
 }

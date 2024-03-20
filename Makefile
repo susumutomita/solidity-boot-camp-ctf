@@ -2,6 +2,10 @@
 format:
 	forge fmt
 
+.PHONY: start_local_node
+start_local_node:
+	anvil
+
 .PHONY: format_check
 format_check:
 	forge fmt --check
@@ -17,6 +21,31 @@ test_watch:
 .PHONY: test_debug
 test_debug:
 	forge test --gas-report -vvvvv --watch
+
+.PHONY: deploy_Level1MatrixAddition_local
+deploy_Level1MatrixAddition_local:
+	forge script script/Level1MatrixAddition.s.sol:Level1MatrixAdditionScript --fork-url http://localhost:8545 \
+  --private-key $(PRIVATE_KEY) --broadcast
+
+.PHONY: deploy_Level2ArraySort_local
+deploy_Level2ArraySort_local:
+	forge script script/Level2ArraySort.s.sol:Level2ArraySortScript --fork-url http://localhost:8545 \
+  --private-key $(PRIVATE_KEY) --broadcast
+
+.PHONY: deploy_Level3UnpackData_local
+deploy_Level3UnpackData_local:
+	forge script script/Level3UnpackData.s.sol:Level3UnpackDataScript --fork-url http://localhost:8545 \
+	--private-key $(PRIVATE_KEY) --broadcast
+
+.PHONY: deploy_Level4PowersOf2_local
+deploy_Level4PowersOf2_local:
+	forge script script/Level4PowersOf2.s.sol:Level4PowersOf2Script --fork-url http://localhost:8545 \
+	--private-key $(PRIVATE_KEY) --broadcast
+
+.PHONY: deploy_Level5Average_local
+deploy_Level5Average_local:
+	forge script script/Level5Average.s.sol:Level5AverageScript --fork-url http://localhost:8545 \
+	--private-key $(PRIVATE_KEY) --broadcast
 
 .PHONY: examine_storage_Level1MatrixAddition
 examine_storage_Level1MatrixAddition:
