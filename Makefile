@@ -34,6 +34,10 @@ examine_storage_Level3UnpackData:
 examine_storage_Level4PowersOf2:
 	sol2uml storage -c Level4PowersOf2 src
 
+.PHONY: examine_storage_Level5Average
+examine_storage_Level5Average:
+	sol2uml storage -c Level5Average src
+
 .PHONY: examine_class
 examine_class:
 	sol2uml src
@@ -58,8 +62,12 @@ open_storage_Level3UnpackData:
 open_storage_Level4PowersOf2:
 	open -a Google\ Chrome ./Level4PowersOf2.svg
 
+	.PHONY: open_storage_Level5Average
+open_storage_Level5Average:
+	open -a Google\ Chrome ./Level5Average.svg
+
 .PHONY: examine_storage
-examine_storage: examine_storage_Level1MatrixAddition examine_storage_Level2ArraySort examine_storage_Level3UnpackData examine_storage_Level4PowersOf2
+examine_storage: examine_storage_Level1MatrixAddition examine_storage_Level2ArraySort examine_storage_Level3UnpackData examine_storage_Level4PowersOf2 examine_storage_Level5Average
 
 .PHONY: before_commit
 before_commit: format test examine_storage examine_class
