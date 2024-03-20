@@ -32,7 +32,10 @@ contract Level4PowersOf2Test is Test {
     }
 
     function testSolutionWithLargeNumber() public {
-        assertEq(level4PowersOf2.solution(9223372036854775808), 9223372036854775808);
+        assertEq(
+            level4PowersOf2.solution(9223372036854775808),
+            9223372036854775808
+        );
     }
 
     function testSolutionWithHexNumber() public {
