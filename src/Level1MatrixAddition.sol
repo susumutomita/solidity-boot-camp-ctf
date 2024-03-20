@@ -9,11 +9,10 @@ pragma solidity ^0.8.24;
 // }
 
 contract Level1MatrixAddition {
-    function solution(uint256[2][3] calldata x, uint256[2][3] calldata y)
-        external
-        pure
-        returns (uint256[2][3] memory finalArray)
-    {
+    function solution(
+        uint256[2][3] calldata x,
+        uint256[2][3] calldata y
+    ) external pure returns (uint256[2][3] memory finalArray) {
         unchecked {
             finalArray[0][0] = x[0][0] + y[0][0];
             finalArray[0][1] = x[0][1] + y[0][1];

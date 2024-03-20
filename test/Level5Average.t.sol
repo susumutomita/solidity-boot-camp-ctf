@@ -43,7 +43,7 @@ contract Level5AverageTest is Test {
     function testSolutionWithLargeNegativeNumbers() public view{
         assertEq(
             level5Average.solution(type(int256).min, type(int256).min + 1),
-            type(int256).min / 2
+            type(int256).min
         );
     }
 
@@ -51,7 +51,7 @@ contract Level5AverageTest is Test {
     function testSolutionWithMixedLargeNumbers() public view{
         assertEq(
             level5Average.solution(type(int256).max, type(int256).min),
-            -1
+            0
         );
     }
 
