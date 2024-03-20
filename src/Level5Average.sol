@@ -8,10 +8,11 @@ pragma solidity ^0.8.24;
 contract Level5Average {
     function solution(int256 a, int256 b) external pure returns (int256) {
         unchecked {
-            int256 adjustment = ((a % 2) + (b % 2) == 0)
-                ? int256(0)
-                : int256(1);
-            return (a / 2) + (b / 2) + (((a % 2) + (b % 2) + adjustment) / 2);
+            int256 adjustment = ((a % 2) + (b % 2) >= 1)
+                ? int256(1)
+                : int256(0);
+
+            return a / 2 + b / 2 + adjustment;
         }
     }
 }

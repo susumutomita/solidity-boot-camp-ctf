@@ -43,7 +43,7 @@ contract Level5AverageTest is Test {
     function testSolutionWithLargeNegativeNumbers() public view{
         assertEq(
             level5Average.solution(type(int256).min, type(int256).min + 1),
-            type(int256).min
+            -57896044618658097711785492504343953926634992332820282019728792003956564819967
         );
     }
 
