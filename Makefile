@@ -22,29 +22,29 @@ test_watch:
 test_debug:
 	forge test --gas-report -vvvvv --watch
 
-.PHONY: deploy_Level1MatrixAddition_local
-deploy_Level1MatrixAddition_local:
-	forge script script/Level1MatrixAddition.s.sol:Level1MatrixAdditionScript --fork-url http://localhost:8545 \
+.PHONY: deploy_Level1MatrixAddition
+deploy_Level1MatrixAddition:
+	forge script script/Level1MatrixAddition.s.sol:Level1MatrixAdditionScript --fork-url $(FORK_URL) \
   --private-key $(PRIVATE_KEY) --broadcast
 
-.PHONY: deploy_Level2ArraySort_local
-deploy_Level2ArraySort_local:
-	forge script script/Level2ArraySort.s.sol:Level2ArraySortScript --fork-url http://localhost:8545 \
+.PHONY: deploy_Level2ArraySort
+deploy_Level2ArraySort:
+	forge script script/Level2ArraySort.s.sol:Level2ArraySortScript --fork-url $(FORK_URL)  \
   --private-key $(PRIVATE_KEY) --broadcast
 
-.PHONY: deploy_Level3UnpackData_local
-deploy_Level3UnpackData_local:
-	forge script script/Level3UnpackData.s.sol:Level3UnpackDataScript --fork-url http://localhost:8545 \
+.PHONY: deploy_Level3UnpackData
+deploy_Level3UnpackData:
+	forge script script/Level3UnpackData.s.sol:Level3UnpackDataScript --fork-url $(FORK_URL)  \
 	--private-key $(PRIVATE_KEY) --broadcast
 
-.PHONY: deploy_Level4PowersOf2_local
-deploy_Level4PowersOf2_local:
-	forge script script/Level4PowersOf2.s.sol:Level4PowersOf2Script --fork-url http://localhost:8545 \
+.PHONY: deploy_Level4PowersOf2
+deploy_Level4PowersOf2:
+	forge script script/Level4PowersOf2.s.sol:Level4PowersOf2Script --fork-url $(FORK_URL)  \
 	--private-key $(PRIVATE_KEY) --broadcast
 
-.PHONY: deploy_Level5Average_local
-deploy_Level5Average_local:
-	forge script script/Level5Average.s.sol:Level5AverageScript --fork-url http://localhost:8545 \
+.PHONY: deploy_Level5Average
+deploy_Level5Average:
+	forge script script/Level5Average.s.sol:Level5AverageScript --fork-url $(FORK_URL) \
 	--private-key $(PRIVATE_KEY) --broadcast
 
 .PHONY: examine_storage_Level1MatrixAddition
